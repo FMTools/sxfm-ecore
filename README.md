@@ -24,11 +24,29 @@ Also, you can use the meta-model classes in a Java Maven project using the follo
     <groupId>sxfm</groupId>
 	<artifactId>sxfm</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-</dependency>   
+</dependency>
+<dependency>
+    <groupId>org.eclipse.emf</groupId>
+    <artifactId>org.eclipse.emf.common</artifactId>
+    <version>2.9.2-v20131212-0545</version>
+</dependency>
+<dependency>
+    <groupId>org.eclipse.emf</groupId>
+    <artifactId>org.eclipse.emf.ecore</artifactId>
+    <version>2.9.2-v20131212-0545</version>
+</dependency>
+<dependency>
+    <groupId>org.eclipse.emf</groupId>
+    <artifactId>org.eclipse.emf.ecore.xmi</artifactId>
+    <version>2.9.1-v20131212-0545</version>
+</dependency>
 ```
 
 If you are not using Maven, you can use the meta-model classes by downloading the .jar library from the releases page in Github. In addition, you must download and include in your projects the following libraries:
 
+* Eclipse EMF Common, org.eclipse.emf.common-2.9.2-v20131212-0545
+* Eclipse Ecore Common, org.eclipse.emf.ecore-2.9.2-v20131212-0545
+* Eclipse Ecore XMI, org.eclipse.emf.ecore.xmi-2.9.1-v20131212-0545
 * [SPLAR](https://github.com/ticsw/splar/releases/tag/1.0), version 1.0
 * [JavaBDD](http://javabdd.sourceforge.net/), version 2.10
 * [Sat4j](http://www.sat4j.org/), version 2.0.4
@@ -56,4 +74,6 @@ Using the [Eclipse m2e plugin](http://eclipse.org/m2e/):
 * **Maven-based build**: In contrast to the original plugins, this project is build using [Maven](http://maven.apache.org/) and [Eclipse Tycho](https://eclipse.org/tycho/).
 * **Includes a Feature and an Update Site**: It generates an update site that can be used to install the plugins using the "Help > Install New Software" and "Help > Eclipse Marketplace" options.  
 
+### TODO
 
+Right now, the plugin dependencies are managed by Tycho. The mechanism works well to compile the plugins in Eclipse but does not work to use the libraries in non-Eclipse environments (such as the web). Maven outside Eclipse cannot detect and download that dependencies. That is the reason to include manually the Eclipse dependencies in the above example. We are planning to use the Apache Felix plugins to manage the dependencies in a way that works both in Eclipse and in Maven. 
