@@ -1,0 +1,111 @@
+@namespace(uri="http://sxfm.com", prefix="sxfm")
+package sxfm;
+
+abstract class Feature {
+  id attr String[1] name;
+  val Group[*] groups;
+  attr String[1] ~id;
+  attr int treeLevel;
+  attr String description;
+}
+
+class Group extends CardinalizedElement {
+  val GroupedFeature[+] groupedFeatures;
+  attr String[1] ~id;
+}
+
+class Constraint {
+  attr int[1] ~id;
+  val Or[1] or;
+}
+
+class Mandatory extends ContainerElement, ContainableElement, Feature, ConstraintableElement, CommonFeature {
+}
+
+class Optional extends Feature, ContainerElement, ContainableElement, ConstraintableElement, VariableFeature {
+}
+
+class FeatureModel {
+  val ConstraintsSet constraintsSet;
+  val FeatureTree featureTree;
+  attr String[1] name;
+  val MetadataSet featureModelInfo;
+  val FeatureModelConfiguaration[*] configuration;
+}
+
+class FeatureTree {
+  val Root[1] root;
+}
+
+abstract class CardinalizedElement {
+  attr int[1] minCardinality;
+  attr int[1] maxCardinality;
+}
+
+class ConstraintsSet {
+  val Constraint[*] constraints;
+}
+
+class GroupedFeature extends Feature, ConstraintableElement, ContainerElement, VariableFeature {
+}
+
+class Root extends ContainerElement, Feature, CommonFeature {
+}
+
+abstract class ContainerElement {
+  val ContainableElement[*] childrenFeatures;
+}
+
+abstract class ConstraintableElement {
+}
+
+abstract class ContainableElement {
+}
+
+class Not extends Literal {
+  val Atom[1] feature;
+}
+
+class Or {
+  val Literal[2..*] clause;
+}
+
+class Atom extends Literal {
+  ref ConstraintableElement[1] feature;
+}
+
+abstract class Literal {
+}
+
+class Data {
+  attr String name;
+  attr String value;
+}
+
+class MetadataSet {
+  val Data[*] data;
+}
+
+class FeatureModelConfiguaration {
+  val FeatureChoice[*] featureChoice;
+}
+
+class FeatureChoice {
+  attr boolean[1] selected;
+  attr DecisionType[1] decisionType;
+  attr int[1] decisionStep;
+  ref Feature[1] feature;
+}
+
+enum DecisionType {
+  manual = 0;
+  propagated = 1;
+  autocompleted = 2;
+}
+
+abstract class VariableFeature {
+}
+
+abstract class CommonFeature {
+}
+

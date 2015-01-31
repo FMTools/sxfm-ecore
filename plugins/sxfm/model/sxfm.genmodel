@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/sxfm/src"
+    modelPluginID="sxfm" modelName="Sxfm" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>sxfm.ecore</foreignModel>
+  <genPackages prefix="Sxfm" disposableProviderFactory="true" ecorePackage="sxfm.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sxfm.ecore#//DecisionType">
+      <genEnumLiterals ecoreEnumLiteral="sxfm.ecore#//DecisionType/manual"/>
+      <genEnumLiterals ecoreEnumLiteral="sxfm.ecore#//DecisionType/propagated"/>
+      <genEnumLiterals ecoreEnumLiteral="sxfm.ecore#//DecisionType/autocompleted"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="sxfm.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sxfm.ecore#//Feature/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sxfm.ecore#//Feature/groups"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sxfm.ecore#//Feature/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sxfm.ecore#//Feature/treeLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sxfm.ecore#//Feature/description"/>
+    </genClasses>
+    <genClasses ecoreClass="sxfm.ecore#//Group">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sxfm.ecore#//Group/groupedFeatures"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sxfm.ecore#//Group/id"/>
+    </genClasses>
+    <genClasses ecoreClass="sxfm.ecore#//Constraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sxfm.ecore#//Constraint/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sxfm.ecore#//Constraint/or"/>
+    </genClasses>
+    <genClasses ecoreClass="sxfm.ecore#//Mandatory"/>
+    <genClasses ecoreClass="sxfm.ecore#//Optional"/>
+    <genClasses ecoreClass="sxfm.ecore#//FeatureModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sxfm.ecore#//FeatureModel/constraintsSet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sxfm.ecore#//FeatureModel/featureTree"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sxfm.ecore#//FeatureModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sxfm.ecore#//FeatureModel/featureModelInfo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sxfm.ecore#//FeatureModel/configuration"/>
+    </genClasses>
+    <genClasses ecoreClass="sxfm.ecore#//FeatureTree">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sxfm.ecore#//FeatureTree/root"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sxfm.ecore#//CardinalizedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sxfm.ecore#//CardinalizedElement/minCardinality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sxfm.ecore#//CardinalizedElement/maxCardinality"/>
+    </genClasses>
+    <genClasses ecoreClass="sxfm.ecore#//ConstraintsSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sxfm.ecore#//ConstraintsSet/constraints"/>
+    </genClasses>
+    <genClasses ecoreClass="sxfm.ecore#//GroupedFeature"/>
+    <genClasses ecoreClass="sxfm.ecore#//Root"/>
+    <genClasses image="false" ecoreClass="sxfm.ecore#//ContainerElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sxfm.ecore#//ContainerElement/childrenFeatures"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sxfm.ecore#//ConstraintableElement"/>
+    <genClasses image="false" ecoreClass="sxfm.ecore#//ContainableElement"/>
+    <genClasses ecoreClass="sxfm.ecore#//Not">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sxfm.ecore#//Not/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="sxfm.ecore#//Or">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sxfm.ecore#//Or/clause"/>
+    </genClasses>
+    <genClasses ecoreClass="sxfm.ecore#//Atom">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sxfm.ecore#//Atom/feature"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sxfm.ecore#//Literal"/>
+    <genClasses ecoreClass="sxfm.ecore#//Data">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sxfm.ecore#//Data/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sxfm.ecore#//Data/value"/>
+    </genClasses>
+    <genClasses ecoreClass="sxfm.ecore#//MetadataSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sxfm.ecore#//MetadataSet/data"/>
+    </genClasses>
+    <genClasses ecoreClass="sxfm.ecore#//FeatureModelConfiguaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sxfm.ecore#//FeatureModelConfiguaration/featureChoice"/>
+    </genClasses>
+    <genClasses ecoreClass="sxfm.ecore#//FeatureChoice">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sxfm.ecore#//FeatureChoice/selected"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sxfm.ecore#//FeatureChoice/decisionType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sxfm.ecore#//FeatureChoice/decisionStep"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sxfm.ecore#//FeatureChoice/feature"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sxfm.ecore#//VariableFeature"/>
+    <genClasses image="false" ecoreClass="sxfm.ecore#//CommonFeature"/>
+  </genPackages>
+</genmodel:GenModel>

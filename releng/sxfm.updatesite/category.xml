@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/sxfm.feature_1.0.0.qualifier.jar" id="sxfm.feature" version="1.0.0.qualifier">
+      <category name="SXFM Ecore Model"/>
+   </feature>
+   <category-def name="SXFM Ecore Model" label="SXFM Ecore Model">
+      <description>
+         EMF meta-model and editor for SXFM feature models.
+      </description>
+   </category-def>
+</site>

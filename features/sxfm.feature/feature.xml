@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="sxfm.feature"
+      label="Feature"
+      version="1.0.0.qualifier">
+
+   <description url="http://gsd.uwaterloo.ca:8088/SPLOT/sxfm.html">
+      SXFM Ecore Metamodel
+   </description>
+
+   <copyright>
+      SXFM Format, (c) 2009 Marcilio Mendonca, Generative Software Development Lab, University of Waterloo.
+SXFM Ecore Model, (c) 2010 Mauricio Alferez
+   </copyright>
+
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      Eclipse Public License - v 1.0
+   </license>
+
+   <plugin
+         id="sxfm"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="sxfm.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="sxfm.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
