@@ -44,9 +44,9 @@ Also, you can use the meta-model classes in a Java Maven project using the follo
 
 If you are not using Maven, you can use the meta-model classes by downloading the .jar library from the releases page in Github. In addition, you must download and include in your projects the following libraries:
 
-* Eclipse EMF Common, org.eclipse.emf.common-2.9.2-v20131212-0545
-* Eclipse Ecore Common, org.eclipse.emf.ecore-2.9.2-v20131212-0545
-* Eclipse Ecore XMI, org.eclipse.emf.ecore.xmi-2.9.1-v20131212-0545
+* [Eclipse EMF Common](http://repo1.maven.org/maven2/org/eclipse/emf/org.eclipse.emf.common/), org.eclipse.emf.common-2.9.2-v20131212-0545
+* [Eclipse Ecore Common](http://repo1.maven.org/maven2//org/eclipse/emf/org.eclipse.emf.ecore/), org.eclipse.emf.ecore-2.9.2-v20131212-0545
+* [Eclipse Ecore XMI](http://repo1.maven.org/maven2//org/eclipse/emf/org.eclipse.emf.ecore.xmi/), org.eclipse.emf.ecore.xmi-2.9.1-v20131212-0545
 * [SPLAR](https://github.com/ticsw/splar/releases/tag/1.0), version 1.0
 * [JavaBDD](http://javabdd.sourceforge.net/), version 2.10
 * [Sat4j](http://www.sat4j.org/), version 2.0.4
@@ -62,7 +62,6 @@ Using command line:
 ```
     $ mvn install
 ```
-
 Using the [Eclipse m2e plugin](http://eclipse.org/m2e/):
 
 1. Select the ``sxfm-ecore`` project in your workspace
